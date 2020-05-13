@@ -25,9 +25,11 @@ NOTE: Do not add a main method to the solution code.
 public class HasSharedDigits {
     public static void main(String[] args) {
 
+        System.out.println(hasSharedDigit(11,100));
+
     }
 
-    public boolean hasSharedDigit(int a, int b){
+    public static boolean hasSharedDigit(int a, int b){
 
         boolean hasCommon = false;
 
@@ -35,6 +37,14 @@ public class HasSharedDigits {
             return false;
         }
 
+        String aValue = ""+a;
+        String bValue = ""+b;
+        for(int i=0;i<aValue.length(); i++){
+            String temp = Character.toString(aValue.charAt(i));
+            if(bValue.contains(temp)){
+                hasCommon = true;
+            }
+        }
 
         return hasCommon;
     }
